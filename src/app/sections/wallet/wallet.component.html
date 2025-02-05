@@ -31,6 +31,7 @@
         </td>
         <td scope="col" class="text-end">
           <!-- AQUÍ EL VALOR TOTAL DE CADA MONEDA -->
+           ${{coin.quantity * coin.price_usd}}
         </td>
         <td scope="col" class="text-end">
           ${{coin.price_usd}}
@@ -42,7 +43,7 @@
           <!-- AQUÍ EL VALOR CONVERTIDO A EUROS -->
         </td>
         <td scope="col" class="text-end">
-          <app-asset-actions />
+          <app-asset-actions [coin]="coin"> </app-asset-actions>
         </td>
       </tr>
       }

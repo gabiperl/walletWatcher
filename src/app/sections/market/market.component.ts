@@ -12,6 +12,10 @@ export class MarketComponent {
 
  private coins:any[] = []
 
+ private euroDol:any = {}
+
+
+
 constructor(private market:MarketDataService) {
   this.getMarketData()
  }
@@ -25,6 +29,16 @@ constructor(private market:MarketDataService) {
       }
     )
   }
+  getEurDolData(){
+    this.market.getEurDolData().subscribe(
+      json => {
+        let objeto:any = json
+        this.euroDol = objeto.data
+      }
+    )
+  }
+
+  
 
   getCoins()
   { return this.coins}

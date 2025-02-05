@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { WalletService } from '../../../wallet.service';
 
 @Component({
   selector: 'app-asset-actions',
@@ -7,5 +8,18 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class AssetActionsComponent {
+  @Input() coin:any
+
+  constructor (private wallet:WalletService){}
+
+  moveAssetDown(coin:any)
+  {this.wallet.moveAssetDown(coin)}
+
+  moveAssetUp(coin:any)
+  {this.wallet.moveAssetUp(coin)}
+
+  removeAsset(coin:any)
+  {this.wallet.removeFromWallet(coin)}
+    
 
 }

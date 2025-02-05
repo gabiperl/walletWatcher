@@ -13,6 +13,9 @@ export class MarketDataService {
 getMarketData(){
   return this.http.get(this.urlBase+"tickers/?limit=20");
 }
+getEurDolData(){
+  return this.http.get(this.urlBase+"ticker/?id=111393");
+}
 
 
 }
