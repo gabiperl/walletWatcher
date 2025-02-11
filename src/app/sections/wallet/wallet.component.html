@@ -2,7 +2,7 @@
 
 <figure>
   <blockquote class="blockquote">
-    <h3></h3>
+    <h3>{{getTotalBalance() | currency}}</h3>
   </blockquote>
   <figcaption class="blockquote-footer">Total balance</figcaption>
 </figure>
@@ -52,5 +52,5 @@
 </div>
 
 <div class="row">
-  <button class="btn btn-primary btn-lg">REFRESH</button>
+  <button (click)="updateWallet()"  class="btn btn-primary btn-lg">REFRESH</button>
 </div>

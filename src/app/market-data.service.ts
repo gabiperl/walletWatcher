@@ -17,5 +17,8 @@ getEurDolData(){
   return this.http.get(this.urlBase+"ticker/?id=111393");
 }
 
+getCoinData(id:number){
+  return this.http.get(this.urlBase+"ticker/?id="+id)}
+
 
 }
