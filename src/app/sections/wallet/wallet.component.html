@@ -4,7 +4,9 @@
   <blockquote class="blockquote">
     <h3>{{getTotalBalance() | currency}}</h3>
   </blockquote>
-  <figcaption class="blockquote-footer">Total balance</figcaption>
+  <figcaption class="blockquote-footer">
+    {{getTotalBalance() | euroConv | currency:' '}}€
+  </figcaption>
 </figure>
 
 <div class="row">
@@ -41,6 +43,7 @@
         </td>
         <td scope="col" class="text-end">
           <!-- AQUÍ EL VALOR CONVERTIDO A EUROS -->
+           {{coin.price_usd * coin.quantity | euroConv | currency:' '}}€ 
         </td>
         <td scope="col" class="text-end">
           <app-asset-actions [coin]="coin"> </app-asset-actions>

@@ -4,10 +4,11 @@ import { AssetActionsComponent } from "./asset-actions/asset-actions.component";
 import { WalletService } from '../../wallet.service';
 import { MarketDataService } from '../../market-data.service';
 import { CurrencyPipe } from '@angular/common';
+import { EuroConvPipe } from '../../euro-conv.pipe';
 
 @Component({
   selector: 'app-wallet',
-  imports: [AssetQuantityComponent, AssetActionsComponent, CurrencyPipe],
+  imports: [AssetQuantityComponent, AssetActionsComponent, CurrencyPipe, EuroConvPipe],
   templateUrl: './wallet.component.html',
   styles: ``
 })

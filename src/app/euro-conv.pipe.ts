@@ -1,13 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { MarketDataService } from './market-data.service';
 
 @Pipe({
   name: 'euroConv'
 })
 export class EuroConvPipe implements PipeTransform {
 
-  transform(value: number): number {
-    let number = value * {{coin.price_usd}}
-    return number;
-  }
+  constructor(private market:MarketDataService) { }
 
+  transform(value:number):number {
+    return value / this.market.getEuroDolRate()
+  }
 }
